@@ -15,3 +15,7 @@ FastAPI tutorial from https://fastapi.tiangolo.com/tutorial
 
 ## Running the app:
 `uvicorn main:app --reload`
+
+## Viewing API documentation
+Swagger UI: http://127.0.0.1:8000/docs
+ReDoc: http://127.0.0.1:8000/redoc
