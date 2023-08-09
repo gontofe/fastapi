@@ -31,6 +31,12 @@ async def read_item(user_id: int, item_id: int, q: str | None = None, short: boo
     return item
 
 
+@app.get("/items/{item_id}")
+async def read_user_item(item_id: str, needy: str):
+    item = {"item_id": item_id, needy: needy}
+    return item
+
+
 # needs to be first, so 'me' doesn't get interpreted as a user ID
 @app.get("/users/me")
 async def read_user_me():
@@ -67,6 +73,7 @@ async def get_model(model_name: ModelName):
 @app.get("/files/{file_path:path}")
 async def read_file(file_path: str):
     return {"file_path": file_path}
+
 
 @app.get("/items/")
 async def read_item(skip: int = 0, limit: int = 10):
