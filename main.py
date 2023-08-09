@@ -19,8 +19,8 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: str | None = None, short: bool = False):
+@app.get("/users/{user_id}/items/{item_id}")
+async def read_item(user_id: int, item_id: int, q: str | None = None, short: bool = False):
     item = {"item_id": item_id}
     if q:
         item.update({"q": q})
